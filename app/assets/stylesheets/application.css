@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.caixaFicha
+{
+    box-sizing: border-box;
+    border: 1px solid black ;
+    font-family:'Times New Roman';
+    font-size: 9pt; 
+    margin: auto;
+    width: 12.5cm !important;
+    min-height: 7.5cm; 
+    max-height: 283.5px;
+    line-height: 1.7rem;
+}
+
+.msgCatalogacao
+{
+    font-family:'Times New Roman';
+    font-size: 11pt; 
+    font: bold;
+    text-align: center;
+    margin: 0px;
+    line-height: 1rem;
+}
+
+.tab {
+    font-family:'Times New Roman';
+    font-size: 9pt; 
+    display: inline-block;
+    margin-left: 2cm;
+    margin-bottom: 0cm;
+    margin-top: 0cm;
+    line-height: 0.8rem;
+}
+
+.segtab {
+    font-family:'Times New Roman';
+    font-size: 9pt; 
+    display: inline-block;
+    margin-left: 2.5cm;
+    margin-bottom: 0cm;
+    margin-top: 0cm;
+    line-height: 0.8rem;
+}

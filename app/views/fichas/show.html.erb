@@ -1,0 +1,68 @@
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br><br>
+    
+
+    <p class="msgCatalogacao">CATALOGAÇÃO NA PUBLICAÇÃO (CIP)</p>        
+    <p class="msgCatalogacao">Serviço de Biblioteca e informação Biomédica </p>
+    <p class="msgCatalogacao"> do Instituto de Ciências Biomédicas da Universidade de São Paulo</p>
+    <br>
+    <p class="msgCatalogacao">Ficha Catalográfica elaborada pelo(a) autor(a)</p>
+
+    <div class="col-8 caixaFicha ">
+        <br>
+            <p class="tab"><%= @ficha.sobrenome %>, <%= @ficha.nome %> </p>
+            <p class="segtab"> 
+              <%= @ficha.titulo %> / <%= @ficha.nome %> <%= @ficha.sobrenome %>; 
+              <%= @ficha.orientadora == true ? "orientadora " : "orientador " %><%= @ficha.nomeorient %> <%= @ficha.sobrenomeorient %>; 
+              <%= @ficha.coorientadora == true ? "coorientadora " : "coorientador " %><%= @ficha.nomecoorient %> <%= @ficha.sobrenomecoorient %>. -- São Paulo, <%= @ficha.ano %>
+              <br>
+              <%= @ficha.numpagina %>p.
+            </p>
+            <br>
+            <br>
+
+            <p class="segtab"> 
+              <% tipotrabsel = "" %>
+              <% if @ficha.tipotrabalho == "TCC" %>
+                <% tipotrabsel = "Trabalho de Conclusão de Curso (Graduação)" %>
+              <% elsif @ficha.tipotrabalho == "DIS" %>
+                <% tipotrabsel = "Dissertação (Mestrado)" %>
+              <% elsif @ficha.tipotrabalho == "DOU" %>
+                <% tipotrabsel = "Tese (Doutorado)" %>
+              <% elsif @ficha.tipotrabalho == "LD" %>
+                <% tipotrabsel = "Tese (Livre docência)" %>
+              <% end %>
+              <%= tipotrabsel%> -- Universidade de São Paulo, Instituto de Ciências Biomédicas.
+            </p>
+
+            <br>
+            <br>
+            <p class="segtab"> 
+              <% if @ficha.assunto1 != "" %>
+                1. <%= @ficha.assunto1 %>.
+              <% end %>
+              <% if @ficha.assunto2 != "" %>
+                2. <%= @ficha.assunto2 %>.
+              <% end %>
+              <% if @ficha.assunto3 != "" %>
+                3. <%= @ficha.assunto3 %>.
+              <% end %>
+              <% if @ficha.assunto4 != "" %>
+                4. <%= @ficha.assunto4 %>.
+              <% end %>      
+              <% if @ficha.assunto5 != "" %>
+                  5. <%= @ficha.assunto5 %>.
+              <% end %>   
+                  I. <%= @ficha.sobrenomeorient %>, <%= @ficha.nomeorient %>,
+                  <%= @ficha.orientadora == true ? "orientadora " : "orientador " %>. II. <%= @ficha.sobrenomecoorient %>, 
+                  <%= @ficha.nomecoorient %>, <%= @ficha.coorientadora == true ? "coorientadora " : "coorientador " %>. III. Título."           
+              </p>
+        <br>
+    </div>
+
+
+    <%= link_to "Gerar PDF", ficha_path(@ficha, :format => :pdf), target: '_blank', class: 'btn btn-primary active' %>

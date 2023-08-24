@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  sobrenome: MyString
+  titulo: MyString
+  tipotrabalho: MyString
+  nomeorient: MyString
+  sobrenomeorient: MyString
+  nomecoorient: MyString
+  sobrenomecoorient: MyString
+  ano: MyString
+  numpagina: MyString
+  assunto1: MyString
+  assunto2: MyString
+  assunto3: MyString
+  assunto4: MyString
+  assunto5: MyString
+
+two:
+  nome: MyString
+  sobrenome: MyString
+  titulo: MyString
+  tipotrabalho: MyString
+  nomeorient: MyString
+  sobrenomeorient: MyString
+  nomecoorient: MyString
+  sobrenomecoorient: MyString
+  ano: MyString
+  numpagina: MyString
+  assunto1: MyString
+  assunto2: MyString
+  assunto3: MyString
+  assunto4: MyString
+  assunto5: MyString

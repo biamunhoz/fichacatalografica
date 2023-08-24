@@ -1,0 +1,112 @@
+<%= form_with(model: ficha, local: true) do |form| %>
+  <% if ficha.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ficha.errors.count, "error") %> prohibited this ficha from being saved:</h2>
+
+      <ul>
+      <% ficha.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome, "Nome:" %>
+    <%= form.text_field :nome, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sobrenome, "Sobrenome:" %>
+    <%= form.text_field :sobrenome, size: 50  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :titulo, "Título:" %>
+    <%= form.text_field :titulo, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipotrabalho, "Trabalho:" %>
+    <%= form.radio_button :tipotrabalho, 'TCC' %> Trabalho de Conclusão de Curso (Graduação)
+    <%= form.radio_button :tipotrabalho, 'DIS' %> Dissertação (Mestrado)
+    <%= form.radio_button :tipotrabalho, 'DOU' %> Tese (Doutorado)
+    <%= form.radio_button :tipotrabalho, 'LD' %>  Tese (Livre-docência)
+    <%= form.radio_button :tipotrabalho, 'M' %>   Memorial (Professor Titular)
+
+  </div>
+
+  <div class="field">
+    <%= form.label :nomeorient, "Nome do(a) orientador(a):" %>
+    <%= form.text_field :nomeorient, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sobrenomeorient, "Sobrenome do(a) orientador(a):" %>
+    <%= form.text_field :sobrenomeorient, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :orientadora %> Orientadora
+  </div>
+
+  <div class="field">
+    <%= form.label :nomecoorient, "Nome do(a) coorientador(a):" %>
+    <%= form.text_field :nomecoorient, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sobrenomecoorient, "Sobrenome do(a) coorientador(a):" %>
+    <%= form.text_field :sobrenomecoorient, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :coorientadora %> Coorientadora
+  </div>
+
+  <div class="field">
+    <%= form.label :ano, "Ano:" %>
+    <%= form.text_field :ano %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numpagina, "Núm. de páginas:" %>
+    <%= form.number_field :numpagina %>
+  </div>
+
+  <p>Assuntos (mín. 1, máx. 5)  </p>
+  <%= link_to "Consulta opcional ao Vocabulário Controlado da USP", "https://vocabusp.abcd.usp.br/Vocab/", target: "_blank" %>
+
+  <div class="field">
+    <%= form.label :assunto1, "1." %>
+    <%= form.text_field :assunto1, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assunto2, "2." %>
+    <%= form.text_field :assunto2, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assunto3, "3." %>
+    <%= form.text_field :assunto3, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assunto4, "4." %>    
+    <%= form.text_field :assunto4, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assunto5, "5." %>
+    <%= form.text_field :assunto5, size: 50 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Gerar" %>
+  </div>
+<% end %>
+
+<p>
+  Créditos: Desenvolvido pela Seção Técnica de Informática - STI/ICB/USP, baseado no programa do Instituto de Ciências Matemáticas e de Computação - ICMC/USP  - Biblioteca Achille Bassi
+</p>
