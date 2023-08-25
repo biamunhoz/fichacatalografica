@@ -16,10 +16,10 @@ class FichasController < ApplicationController
   def show
 
     @ficha.assunto1 = capitalizar_titulo(@ficha.assunto1)
-    @ficha.assunto2 = capitalizar_titulo(@ficha.assunto2)
-    @ficha.assunto3 = capitalizar_titulo(@ficha.assunto3)
-    @ficha.assunto4 = capitalizar_titulo(@ficha.assunto4)
-    @ficha.assunto5 = capitalizar_titulo(@ficha.assunto5)
+    @ficha.assunto2 = capitalizar_titulo(@ficha.assunto2) unless @ficha.assunto2 == ""
+    @ficha.assunto3 = capitalizar_titulo(@ficha.assunto3) unless @ficha.assunto3 == ""
+    @ficha.assunto4 = capitalizar_titulo(@ficha.assunto4) unless @ficha.assunto4 == ""
+    @ficha.assunto5 = capitalizar_titulo(@ficha.assunto5) unless @ficha.assunto5 == ""
     @ficha.save
 
     respond_to do |format|    
@@ -46,7 +46,7 @@ class FichasController < ApplicationController
     @ficha.sobrenomecoorient = ""
     @ficha.ano = ""
     @ficha.numpagina = ""
-    @ficha.assunto1 = ""
+    @ficha.assunto1 = "desconhecido"
     @ficha.assunto2 = ""
     @ficha.assunto3 = ""
     @ficha.assunto4 = ""

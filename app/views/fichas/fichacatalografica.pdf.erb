@@ -92,8 +92,10 @@
                 <p class="tab"><%= @ficha.sobrenome %>, <%= @ficha.nome %></p>
                 <p class="segtab"> 
                 <%= @ficha.titulo %> / <%= @ficha.nome %> <%= @ficha.sobrenome %>; 
-                <%= @ficha.orientadora == true ? "orientadora " : "orientador " %><%= @ficha.nomeorient %> <%= @ficha.sobrenomeorient %>; 
-                <%= @ficha.coorientadora == true ? "coorientadora " : "coorientador " %><%= @ficha.nomecoorient %> <%= @ficha.sobrenomecoorient %>. -- São Paulo, <%= @ficha.ano %>.
+                <%= @ficha.orientadora == true ? "orientadora " : "orientador " %><%= @ficha.nomeorient %> <%= @ficha.sobrenomeorient %><%= @ficha.nomecoorient == "" ? ". " : "; " %>
+                <% if @ficha.nomecoorient != "" %>                 
+                    <%= @ficha.coorientadora == true ? "coorientadora " : "coorientador " %><%= @ficha.nomecoorient %> <%= @ficha.sobrenomecoorient %>.
+                <% end %>-- São Paulo, <%= @ficha.ano %>.
                 </p>
                 <p class="tertab"><%= @ficha.numpagina %> p.</p>
 
@@ -120,23 +122,29 @@
                 <br>
                 <p class="segtab"> 
                 <% if @ficha.assunto1 != "" %>
-                    1. <%= @ficha.assunto1  %>.
+                    1.&emsp;<%= @ficha.assunto1.rstrip %>.&nbsp;
                 <% end %>
                 <% if @ficha.assunto2 != "" %>
-                    2. <%= @ficha.assunto2 %>.
+                    2.&emsp;<%= @ficha.assunto2.rstrip %>.&nbsp;
                 <% end %>
                 <% if @ficha.assunto3 != "" %>
-                    3. <%= @ficha.assunto3 %>.
+                    3.&emsp;<%= @ficha.assunto3.rstrip %>.&nbsp;
                 <% end %>
                 <% if @ficha.assunto4 != "" %>
-                    4. <%= @ficha.assunto4 %>.
+                    4.&emsp;<%= @ficha.assunto4.rstrip %>.&nbsp;
                 <% end %>      
                 <% if @ficha.assunto5 != "" %>
-                    5. <%= @ficha.assunto5 %>.
+                    5.&emsp;<%= @ficha.assunto5.rstrip %>.&nbsp;
                 <% end %>   
-                    I. <%= @ficha.sobrenomeorient %>, <%= @ficha.nomeorient %>,
-                    <%= @ficha.orientadora == true ? "orientadora" : "orientador" %>. II. <%= @ficha.sobrenomecoorient %>, 
-                    <%= @ficha.nomecoorient %>, <%= @ficha.coorientadora == true ? "coorientadora" : "coorientador" %>. III. Título.         
+                    I.&emsp;<%= @ficha.sobrenomeorient %>, <%= @ficha.nomeorient %>,
+                    <%= @ficha.orientadora == true ? "orientadora" : "orientador" %>.&nbsp;
+                    <% if @ficha.nomecoorient != "" %>
+                        II.&emsp;<%= @ficha.sobrenomecoorient %>, 
+                        <%= @ficha.nomecoorient %>, <%= @ficha.coorientadora == true ? "coorientadora." : "coorientador." %>&nbsp;
+                        III.&emsp;Título. 
+                    <% else %>
+                        II.&emsp;Título. 
+                    <% end %> 
                 </p>
             <br>
         </div>
