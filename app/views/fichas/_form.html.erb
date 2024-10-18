@@ -30,6 +30,7 @@
     <%= form.label :tipotrabalho, "Trabalho:" %>
     <%= form.radio_button :tipotrabalho, 'TCC' %> Trabalho de Conclusão de Curso (Graduação)
     <%= form.radio_button :tipotrabalho, 'DIS' %> Dissertação (Mestrado)
+    <%= form.radio_button :tipotrabalho, 'DIP' %> Dissertação (Mestrado Profissional)
     <%= form.radio_button :tipotrabalho, 'DOU' %> Tese (Doutorado)
     <%= form.radio_button :tipotrabalho, 'LD' %>  Tese (Livre-docência)
     <%= form.radio_button :tipotrabalho, 'M' %>   Memorial (Professor Titular)
@@ -75,7 +76,7 @@
   </div>
 
   <p>Assuntos (mín. 1, máx. 5)  </p>
-  <%= link_to "Consulta opcional ao Vocabulário Controlado da USP", "https://vocabusp.abcd.usp.br/Vocab/", target: "_blank" %>
+  <%= link_to "Consulta opcional ao Vocabulário Controlado da USP", "https://vocabulario.abcd.usp.br/pt-br/index.php", target: "_blank" %>
 
   <div class="field">
     <%= form.label :assunto1, "1." %>

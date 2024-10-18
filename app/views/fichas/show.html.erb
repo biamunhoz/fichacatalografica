@@ -31,6 +31,8 @@
                 <% tipotrabsel = "Trabalho de Conclusão de Curso (Graduação)" %>
               <% elsif @ficha.tipotrabalho == "DIS" %>
                 <% tipotrabsel = "Dissertação (Mestrado)" %>
+              <% elsif @ficha.tipotrabalho == "DIP" %>
+                <% tipotrabsel = "Dissertação (Mestrado Profissional)" %>                
               <% elsif @ficha.tipotrabalho == "DOU" %>
                 <% tipotrabsel = "Tese (Doutorado)" %>
               <% elsif @ficha.tipotrabalho == "LD" %>
